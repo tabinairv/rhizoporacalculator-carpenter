@@ -26,27 +26,8 @@
    
    input[type="submit"]:hover {
     background-color: #45a049;
-   }</style><script>document.getElementById('estimationForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-     
-    var diameter = parseFloat(document.getElementById('diameter').value);
-    var area = parseFloat(document.getElementById('area').value);
-    var abundance = parseFloat(document.getElementById('abundance').value);
-    var carbonPrice = parseFloat(document.getElementById('carbonPrice').value);
-     
-    var biomassPerTree = 0.1366 * Math.pow(diameter, 2.4377);
-    var biomassPerHectare = biomassPerTree * abundance;
-    var stockCarbonPerHectare = biomassPerHectare * 0.47 * abundance;
-    var emisionPerHectare = stockCarbonPerHectare * 3.67;
-    var carbonValue = emisionPerHectare * carbonPrice;
-     
-    document.getElementById('results').innerHTML =
-       'Biomass Per Tree: ' + biomassPerTree.toFixed(2) + ' Kg/Tree<br>' +
-       'Biomass Per Hectare: ' + biomassPerHectare.toFixed(2) + ' Ton/Ha<br>' +
-       'Stock Carbon Per Hectare: ' + stockCarbonPerHectare.toFixed(2) + ' Ton/Ha<br>' +
-       'Emission Per Hectare: ' + emisionPerHectare.toFixed(2) + ' Ton/Ha<br>' +
-       'Carbon Value Per Hectare: $' + carbonValue.toFixed(2);
-   });</script></head>
+   }</style>
+   </head>
   <body>
    <h1>Carbon Calculator</h1>
    <h2>Rhizopora mucronata</h2>
@@ -62,6 +43,26 @@
       <input type="submit" value="Calculate">
    </form>
    <h2 id="results"></h2>
-   
+   <script>document.getElementById('estimationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+       
+      var diameter = parseFloat(document.getElementById('diameter').value);
+      var area = parseFloat(document.getElementById('area').value);
+      var abundance = parseFloat(document.getElementById('abundance').value);
+      var carbonPrice = parseFloat(document.getElementById('carbonPrice').value);
+       
+      var biomassPerTree = 0.1366 * Math.pow(diameter, 2.4377);
+      var biomassPerHectare = biomassPerTree * abundance;
+      var stockCarbonPerHectare = biomassPerHectare * 0.47 * abundance;
+      var emisionPerHectare = stockCarbonPerHectare * 3.67;
+      var carbonValue = emisionPerHectare * carbonPrice;
+       
+      document.getElementById('results').innerHTML =
+         'Biomass Per Tree: ' + biomassPerTree.toFixed(2) + ' Kg/Tree<br>' +
+         'Biomass Per Hectare: ' + biomassPerHectare.toFixed(2) + ' Ton/Ha<br>' +
+         'Stock Carbon Per Hectare: ' + stockCarbonPerHectare.toFixed(2) + ' Ton/Ha<br>' +
+         'Emission Per Hectare: ' + emisionPerHectare.toFixed(2) + ' Ton/Ha<br>' +
+         'Carbon Value Per Hectare: $' + carbonValue.toFixed(2);
+     });</script> 
   
   </body></html>
