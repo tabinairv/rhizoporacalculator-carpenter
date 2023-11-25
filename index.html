@@ -52,8 +52,8 @@
       var carbonPrice = parseFloat(document.getElementById('carbonPrice').value);
        
       var biomassPerTree = 0.1366 * Math.pow(diameter, 2.4377);
-      var biomassPerHectare = biomassPerTree * abundance;
-      var stockCarbonPerHectare = biomassPerHectare * 0.47 * abundance;
+      var biomassPerHectare = biomassPerTree * abundance*area;
+      var stockCarbonPerHectare = biomassPerHectare * 0.47 *;
       var emisionPerHectare = stockCarbonPerHectare * 3.67;
       var carbonValue = emisionPerHectare * carbonPrice;
        
