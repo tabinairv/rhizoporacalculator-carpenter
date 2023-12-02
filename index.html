@@ -1,7 +1,7 @@
 <html><head>
-   <title>Biomass Estimation</title>
+   <title>Carbon Calculator</title>
    
-  <style>body {
+  <link rel="shortcut icon" href="https://i.ibb.co/fYzX9GP/logo.png" type="image/png"><style>body {
     font-family: Arial, sans-serif;
    }
    
@@ -29,8 +29,8 @@
    }</style>
    </head>
   <body>
-   <h1>Carbon Calculator</h1>
-   <h2>Rhizopora mucronata</h2>
+   <h1 style="color:#337ab7">Carbon Calculator</h1>
+    <img style="display:inline;position:relative;height: 50;" src="https://i.ibb.co/HPL7wyz/logo-mangroves.jpg"><span style="display:inline;position:relative;bottom: 19px;color:#045f50;font-size: x-large;font-weight: bolder;">Rhizopora mucronata</span>
    <form id="estimationForm">
       <label for="diameter">Diameter (cm):</label>
       <input type="number" id="diameter" name="diameter" required=""><br><br>
@@ -39,7 +39,9 @@
       <label for="abundance">Abundance per hectare:</label>
       <input type="number" id="abundance" name="abundance" required=""><br><br>
       <label for="carbonPrice">Carbon Price ($):</label>
-      <input type="number" id="carbonPrice" name="carbonPrice" required=""><br><br>
+      <input type="number" id="carbonPrice" name="carbonPrice" required=""><p class="type__info" data-v-192489e5="">
+    Kalkulasi yang digunakan sesuai acuan Dharmawan &amp; Siregar 2009 dan jurnal-jurnal ilmiah pendukung
+  </p><br>
       <input type="submit" value="Calculate">
    </form>
    <h2 id="results"></h2>
@@ -65,4 +67,5 @@
          'Carbon Value (Hectare): $' + carbonValue.toFixed(2);
      });</script> 
   
-  </body></html>
+  
+</body></html>
