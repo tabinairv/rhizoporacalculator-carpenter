@@ -57,12 +57,12 @@
       var biomassPerHectare = biomassPerTree * abundance*area;
       var stockCarbonPerHectare = biomassPerHectare * 0.47;
       var emisionPerHectare = stockCarbonPerHectare * 3.67;
-      var carbonValue = (emisionPerHectare-stockCarbonPerHectare) * carbonPrice;
+      var carbonValue = emisionPerHectare * carbonPrice;
        
       document.getElementById('results').innerHTML =
          'Biomass (Tree): ' + biomassPerTree.toFixed(2) + ' Kg<br>' +
          'Biomass (Hectare): ' + biomassPerHectare.toFixed(2) + ' Kg<br>' +
-         'Stock Carbon (Hectare): ' + stockCarbonPerHectare.toFixed(2) + ' Kg CO₂<br>' +
+         'Stock Carbon (Hectare): ' + stockCarbonPerHectare.toFixed(2) + ' Kg C<br>' +
          'Emission (Hectare): ' + emisionPerHectare.toFixed(2) + ' Kg CO₂<br>' +
          'Carbon Value (Hectare): $' + carbonValue.toFixed(2);
      });</script> 
