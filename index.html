@@ -57,7 +57,7 @@
       var biomassPerHectare = biomassPerTree * abundance*area;
       var stockCarbonPerHectare = biomassPerHectare * 0.47;
       var emisionPerHectare = stockCarbonPerHectare * 3.67;
-      var carbonValue = emisionPerHectare * carbonPrice;
+      var carbonValue = (emisionPerHectare-stockCarbonPerHectare) * carbonPrice;
        
       document.getElementById('results').innerHTML =
          'Biomass (Tree): ' + biomassPerTree.toFixed(2) + ' Kg<br>' +
